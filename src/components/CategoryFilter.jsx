@@ -3,8 +3,8 @@ import { categories } from "../data/products";
 
 export default function CategoryFilter() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const activeCategory = searchParams.get("q") || ""
-  const handleSelect = () => {
+  const activeCategory = searchParams.get("category") || ""
+  const handleSelect = (id) => {
     setSearchParams(id ? {category: id}: {})
   }
   return (

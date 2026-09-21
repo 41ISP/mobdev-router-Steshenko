@@ -1,6 +1,10 @@
 import StatusBlock from '../components/StatusBlock.jsx';
+import {useLocation, useNavigate} from 'react-router-dom';
 
-export default function NotFoundPage({ path, onGoHome }) {
+export default function NotFoundPage() {
+  const navigate = useNavigate()
+  const location = uselocation()
+
   return (
     <section className="page-shell">
       <StatusBlock
@@ -8,7 +12,7 @@ export default function NotFoundPage({ path, onGoHome }) {
         title="Такой страницы нет"
         subtitle={`Путь "${path}" не совпал ни с одним маршрутом.`}
         actionLabel="Вернуться на главную"
-        onAction={onGoHome}
+        onAction={ () => navigate('/')}
       />
     </section>
   );
